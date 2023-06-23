@@ -1,0 +1,19 @@
+handle_CRUD_flask
+
+基本的にpythonのORMによって、python言語で操作する。
+
+テーブルはapp.py内にmodelとしてデータテーブルを定義し（RDBMなら複数テーブル用意）、
+pythonコマンドから以下を実行する事でマイグレートすることが出来る。
+
+```
+from app import app,db
+with app.app_context():
+    db.create_all()
+```
+以上の手順は下記のサイト参照
+https://creepfablic.site/2020/05/03/python-flask-flask-admin/
+ちなみにこのサイトではflask_adminによるデータテーブルの可視化や管理まで説明してくれているので便利
+＊adminで管理できるテーブル数には限界があると思われる。大体４テーブルくらい？
+
+CRUD操作は以下のサイトが有能
+https://qiita.com/arkuchy/items/75799665acd09520bed2
